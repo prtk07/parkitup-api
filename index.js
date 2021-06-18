@@ -46,7 +46,6 @@ app.post("/api/signup", (req, res) => {
                     .save()
                     .then((data) => {
                         res.send({ token: generateJWT(data), user: data });
-                        res.redirect("/");
                     })
                     .catch((e) => {
                         if (e) throw e;
