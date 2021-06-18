@@ -10,6 +10,7 @@ let UserSchema = new mongoose.Schema({
 let VehicleSchema = new mongoose.Schema({
     vehicleno: { type: String, unique: true },
     vehicletype: { type: String },
+    owner: { type: String },
 });
 
 module.exports = { UserSchema, VehicleSchema };
