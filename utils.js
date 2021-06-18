@@ -12,4 +12,11 @@ function generateJWT(userData) {
     return jwt.sign(payload, process.env.SECRET_KEY);
 }
 
-module.exports = { generateJWT };
+function getUser(token) {
+    let auth = token;
+    auth = auth.replace("Bearer ", "");
+    let { sub } = jwt.verify(auth, process.env.SECRET_KEY);
+    return sub;
+}
+
+module.exports = { generateJWT, getUser };
