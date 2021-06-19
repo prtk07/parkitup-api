@@ -148,4 +148,6 @@ app.get("/api/availability", (req, res) => {
     });
 });
 
-app.listen(port, () => console.log(`Example app listening on port port!`));
+app.listen(process.env.PORT || 8080, () =>
+    console.log(`Example app listening on port port!`)
+);
